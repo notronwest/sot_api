@@ -1,0 +1,29 @@
+<button id="open-link-button">Start linking</button>
+<script src="https://cdn.merge.dev/initialize.js"></script>
+<script type="text/javascript">
+    const button = document.getElementById("open-link-button");
+    button.disabled = true;
+
+    function onSuccess(public_token) {
+        // Send public_token to server (Step 3)
+        console.log(public_token)
+    }
+
+    MergeLink.initialize({
+        // Replace ADD_GENERATED_LINK_TOKEN with the token retrieved from your backend (Step 1)
+        linkToken: "gm5cViz6NRvUOj6IZV0udeILnR9Ufyosd2w2XRhXkhXX70BBvZqb-g",
+        onSuccess: (public_token) => onSuccess(public_token),
+        onReady: () => (button.disabled = false),
+        // A value of `true` for `shouldSendTokenOnSuccessfulLink` makes Link call `onSuccess`
+        // immediately after an account has been successfully linked instead of after the user
+        // closes the Link modal.
+        shouldSendTokenOnSuccessfulLink: true,
+        // tenantConfig: {
+        // apiBaseURL: "https://api-eu.merge.dev" /* OR your specified single tenant API base URL */
+        // },
+    });
+
+    button.addEventListener("click", function () {
+        MergeLink.openLink();
+    });
+</script>
