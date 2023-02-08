@@ -6,7 +6,8 @@ enum ErrorCode {
     GS002('GS002','Entity not found'),
     GS003('GS003','Unprocessable Request'),
     GS004('GS004','User with that email already exists'),
-    GS005( 'GS005','Illegal access' )
+    GS005( 'GS005','Illegal access' ),
+    GS006( 'GS006','Database error occurred' )
 
     private final String code
     private final String message

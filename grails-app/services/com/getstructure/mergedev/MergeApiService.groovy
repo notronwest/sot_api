@@ -7,11 +7,10 @@ import com.getstructure.mergeApi.model.MergeAPIParameters
 import com.getstructure.mergeApi.model.MergeApiSaveAccountTokenRequest
 import com.getstructure.mergeApi.model.MergeApiStartRequest
 import com.getstructure.mergeApi.model.MergeAPICallRequest
-import com.getstructure.mergeApi.model.TicketDTO
 import com.getstructure.user.model.UserDTO
 import com.getstructure.util.GSDateUtil
 import grails.gorm.transactions.Transactional
-import com.getstructure.AbstractService
+import com.getstructure.GSAbstractService
 import groovy.json.JsonSlurper
 import groovy.sql.GroovyRowResult
 import groovy.sql.Sql
@@ -31,7 +30,7 @@ import java.net.http.HttpRequest
 import java.net.http.HttpResponse
 
 @Transactional
-class MergeApiService extends AbstractService {
+class MergeApiService extends GSAbstractService {
 
     static final mergeAPIBaseURL = 'https://api.merge.dev/api/'
     // TODO: move to env variables

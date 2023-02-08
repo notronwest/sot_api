@@ -5,7 +5,7 @@ import groovy.sql.Sql
 
 
 @Transactional
-class AbstractService {
+class GSAbstractService {
     /**
      * A Groovy SQL instance
      */
