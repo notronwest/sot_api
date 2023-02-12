@@ -130,7 +130,7 @@ class MergeApiService extends GSAbstractService {
 
         // build API parameters
         MergeAPIParameters params = new MergeAPIParameters(
-                accountToken: accountToken.account_token,
+                accountToken: accountToken.access_token,
                 fullAPIURL: "${mergeAPIBaseURL}${mergeAPIResource.baseURL}${mergeAPIResource.url}",
                 params: mergeAPICallRequest.params,
                 method: mergeAPIResource.method

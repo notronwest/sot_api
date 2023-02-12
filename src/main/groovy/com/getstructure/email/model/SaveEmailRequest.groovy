@@ -24,6 +24,7 @@ class SaveEmailRequest implements Validateable{
     Map<String,String> metadata
     List<Map> rules
     List tags
+    Integer isTest
 
     static constraints = {
         customerEmailId nullable: true
@@ -46,5 +47,6 @@ class SaveEmailRequest implements Validateable{
         metadata nullable: true
         rules nullable: true
         tags nullable: true
+        isTest nullable: true
     }
 }
